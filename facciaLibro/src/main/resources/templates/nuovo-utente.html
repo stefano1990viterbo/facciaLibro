@@ -1,0 +1,44 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Nuovo Utente</title>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<form action="/utente/" method="POST">
+		<p>Nome:</p>
+		<input type="text" name="nome"> <br>
+		<p>Cognome:</p>
+		<input type="text" name="cognome"> <br>
+		<br> 
+		<p>anno di nascita:</p>
+		<input type="text" name="annoNascita"> 
+		<br>
+		
+		<p>via:</p>
+		<input type="text" name="indirizzo.via"> 
+		<p>civico:</p>
+		<input type="text" name="indirizzo.civico">
+		<p>comune:</p>
+		<input type="text" name="indirizzo.comune">
+		<p>provincia:</p>
+		<input type="text" name="indirizzo.provincia">
+		
+		
+		
+		<p>primo telefono:</p>
+		<input type="text"  name="telefono[0].numero">	
+		<p>secondo telefono:</p>
+		<input type="text" name="telefono[1].numero">
+		
+			<input type="submit">
+	</form>
+
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<meta charset="utf-8">
+<title>Utenti</title>
+</head>
+<body>
+	<h1>utenti</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Cognome</th>
+				<th>Indirizzo</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="utente :${listaUtenti}">
+				<td th:text="${utente.nome}"></td>
+				<td th:text="${utente.cognome}"></td>
+				<td th:text="${utente.indirizzo}"></td>
+				
+				
+				
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

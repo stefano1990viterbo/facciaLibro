@@ -1,0 +1,33 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>faccia libro</title>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<h1>tutti i post</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>post</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="p :${primaPagina}">
+				<td th:text="${p.nome}"></td>
+				<td th:text="${p.post}"></td>
+			
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+
+</html>
