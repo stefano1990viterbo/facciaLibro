@@ -16,9 +16,9 @@ public class IndirizzoService {
 	
 
 	public Indirizzo associaIndirizzo(Indirizzo indirizzo) {		
-		indirizzoRepository.save(indirizzo);
+		Indirizzo indirizzoSalvato=indirizzoRepository.save(indirizzo);
 		
-		return indirizzo;
+		return indirizzoSalvato;
 		
 			}
 	

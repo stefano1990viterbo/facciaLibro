@@ -11,6 +11,7 @@ import com.example.facciaLibro.entity.Telefono;
 @Repository
 public interface TelefonoRepository extends CrudRepository<Telefono, Long>{
 
-	void save(List<Telefono> telefono);
+//	List<Telefono> save(List<Telefono> telefono);
 
+	
 }

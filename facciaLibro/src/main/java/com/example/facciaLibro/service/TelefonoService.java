@@ -1,5 +1,6 @@
 package com.example.facciaLibro.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,18 +13,25 @@ import com.example.facciaLibro.repository.TelefonoRepository;
 
 @Service
 public class TelefonoService {
-	
+
 	@Autowired
 	TelefonoRepository telefonoRepository;
-	
-	
-	public List<Telefono> creaTelefono(List<Telefono> telefono) {	
+
+	public List<Telefono> creaTelefono(List<Telefono> listaTelefono) {
+
+		List<Telefono> telefoniSalvati = new ArrayList<>();
 		
-		telefonoRepository.save(telefono);
-		
-		return telefono;
-		
-			}
-	
+		for (Telefono numeroSalvare : listaTelefono) {
+
+			
+			
+			
+		Telefono telefonoSalvato = telefonoRepository.save(numeroSalvare);
+		telefoniSalvati.add(telefonoSalvato);
+
+		}
+		return telefoniSalvati;
+
+	}
 
 }

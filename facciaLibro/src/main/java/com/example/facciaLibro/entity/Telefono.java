@@ -30,13 +30,14 @@ public class Telefono {
 	
 	
 	
-	public Integer getnumero() {
+	
+
+	public Integer getNumero() {
 		return numero;
 	}
-	public void senumero(Integer numero) {
+	public void setNumero(Integer numero) {
 		this.numero = numero;
 	}
-
 	public Long getId() {
 		return id;
 	}
