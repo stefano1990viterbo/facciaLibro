@@ -18,9 +18,14 @@ public class Post {
 	private LocalDateTime dataCreazione=LocalDateTime.now();
 	
 	private Long idUtente;
-	
-	
-	
+	private String nomeUtente;
+
+		public String getNomeUtente() {
+		return nomeUtente;
+	}
+	public void setNomeUtente(String nomeUtente) {
+		this.nomeUtente = nomeUtente;
+	}
 	public Long getIdUtente() {
 		return idUtente;
 	}

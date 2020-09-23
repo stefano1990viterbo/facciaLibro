@@ -20,14 +20,17 @@ public class TelefonoService {
 	public List<Telefono> creaTelefono(List<Telefono> listaTelefono) {
 
 		List<Telefono> telefoniSalvati = new ArrayList<>();
+		Utente utenteAggiornare = new Utente();
 		
 		for (Telefono numeroSalvare : listaTelefono) {
 
 			
+			telefonoRepository.save(numeroSalvare);
 			
 			
-		Telefono telefonoSalvato = telefonoRepository.save(numeroSalvare);
-		telefoniSalvati.add(telefonoSalvato);
+		//Telefono telefonoSalvato = telefonoRepository.save(numeroSalvare);
+		telefoniSalvati.add(numeroSalvare);
+		utenteAggiornare.setTelefono(telefoniSalvati);
 
 		}
 		return telefoniSalvati;

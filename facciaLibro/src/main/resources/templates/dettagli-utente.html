@@ -9,41 +9,36 @@
 
 <body>
 
-	<h1>FacciALibrO</h1>
+	<h1>dettagli utente</h1>
+
+	<p th:text="${utenteSelezionato}"></p>
+
+
+
 
 	<table>
 		<thead>
 			<tr>
-				<th>Nome</th>
-				<th>Titolo</th>
-				
+
 				<th>post</th>
-				<th>idutente</th>
-				
+
+
 			</tr>
 		</thead>
-		
+
 		<tbody>
 			<tr th:each="p :${listaPost}">
-			
-			<td th:text="${p.nomeUtente}"></td>
+
+
 				<td th:text="${p.titolo}"></td>
+
+
 				<td th:text="${p.testo}"></td>
-				
-				<td><a th:href="${p.idUtente}" th:text="${p.idUtente}">
-							</a></td>
-			
+
+
 			</tr>
 		</tbody>
 	</table>
-	
-	
-	
-	
-	<a href="/post/new">inserisci un nuovo post</a>
-	<br>
-	<a href="/utente/">utenti</a>
-	<a href="/utente/new">registrati</a>
 
 </body>
 

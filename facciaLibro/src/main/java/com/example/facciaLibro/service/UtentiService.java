@@ -25,6 +25,16 @@ public class UtentiService {
 	
 //	@Autowired
 //	Model model;
+	
+	
+	public Utente utenteFindById(Long id) {
+		System.out.println("debug idselezionato " +id);
+		Utente utenteSelezionato = utentiRepository.findById(id).get();
+		//model.addAttribute("utenteTrovato", utenteSelezionato);
+		return utenteSelezionato;
+	}
+	
+	
 
 	public String creaUtente(Utente utente) {
 

@@ -1,5 +1,6 @@
 package com.example.facciaLibro.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,35 +19,48 @@ public class PostService {
 
 	@Autowired
 	UtentiRepository utentiRepository;
+	
+	
 
 	public List<Post> leggiPost() {
 
 		return (List<Post>) postRepository.findAll();
 	}
 
-	public void creaPost(Post post,Utente utenteConfrontare) {
+	public void creaPost(Post post, Utente utenteConfrontare) {
+
+		List<Utente> listaUtente = (List<Utente>) utentiRepository.findAll();
+		List<Post> listaPost =  new ArrayList<>();
 		
-		List<Utente> listaUtente= (List<Utente>) utentiRepository.findAll();
 		
-		for (Utente utenteAggiornare: listaUtente ) {
-			
-			if(utenteConfrontare.getNome().equalsIgnoreCase(utenteAggiornare.getNome()) &&
-			utenteConfrontare.getCognome().equalsIgnoreCase(utenteAggiornare.getCognome())){
-				
-				System.out.println("DEBUG ID "+ utenteAggiornare.getId());
-				
+		
+		for (Utente utenteAggiornare : listaUtente) {
+
+			if (utenteConfrontare.getNome().equalsIgnoreCase(utenteAggiornare.getNome())
+					&& utenteConfrontare.getCognome().equalsIgnoreCase(utenteAggiornare.getCognome())) {
+
 				post.setIdUtente(utenteAggiornare.getId());
+				post.setNomeUtente(utenteAggiornare.getNome());
+				
+				listaPost.add(post);				
+				utenteAggiornare.setPost(listaPost);
 				postRepository.save(post);
 				
+
 			}
-			
-			
+
 		}
-			
-		
+
 //		System.out.println("DEBUG post " +utenteConfrontare);
 //		postRepository.save(post);
+
+	}
+
+	public List<Post> postByIdUtente(Long idUtente) {
+		List<Post> postUtenteSelezionato= new ArrayList<>();
+		postUtenteSelezionato= postRepository.findByIdUtente(idUtente);
 		
+		return  postUtenteSelezionato;
 	}
 
 }

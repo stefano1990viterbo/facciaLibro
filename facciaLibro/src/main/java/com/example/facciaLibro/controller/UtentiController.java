@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,15 +24,15 @@ public class UtentiController {
 
 	@Autowired
 	IndirizzoService indirizzoService;
-	
+
 	@GetMapping("/")
 	public List<Utente> getUtenti(Model model) {
 		List<Utente> listaUtenti = utentiService.leggiUtenti();
 		model.addAttribute("listaUtenti", listaUtenti);
-		System.out.println("Utenti: " + listaUtenti);
-		return listaUtenti;		
+
+		return listaUtenti;
 	}
-	
+
 	@GetMapping("/new")
 	public String nuovoUtente() {
 		return "/nuovo-utente";
@@ -41,5 +42,13 @@ public class UtentiController {
 	public String createUtente(Utente utente) {
 		utentiService.creaUtente(utente);
 		return "redirect:/utente/";
+	}
+
+	@GetMapping("/{idUtente}")
+	public String show(@PathVariable Long id, Model model) {
+
+		Utente utenteSelezionato = utentiService.utenteFindById(id);
+		model.addAttribute("utenteTrovato", utenteSelezionato);
+		return "dettagli-utente";
 	}
 }
