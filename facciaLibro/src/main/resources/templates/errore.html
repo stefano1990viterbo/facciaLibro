@@ -14,28 +14,24 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Nome</th>
-				<th>Titolo</th>
-				
-				<th>post</th>
-				
+				<th>errore</th>
+
+
 			</tr>
 		</thead>
-		
+
 		<tbody>
-			<tr th:each="p :${listaPost}">
-			
-			
-				<td th:text="${p.titolo}"></td>
-				<td th:text="${p.testo}"></td>
-			
+			<tr th:each="p :${errore}">
+
+
+				<td th:text="${p.errore}"></td>
+
+
 			</tr>
 		</tbody>
 	</table>
-	
-	
-	
-	
+
+
 	<a href="/post/new">inserisci un nuovo post</a>
 	<br>
 	<a href="/utente/">utenti</a>

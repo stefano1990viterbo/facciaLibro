@@ -15,8 +15,18 @@ public class Post {
 	private Long id;
 	private String titolo;
 	private String testo;
-	private LocalDateTime dataCreazione;
+	private LocalDateTime dataCreazione=LocalDateTime.now();
 	
+	private Long idUtente;
+	
+	
+	
+	public Long getIdUtente() {
+		return idUtente;
+	}
+	public void setIdUtente(Long idUtente) {
+		this.idUtente = idUtente;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -43,8 +53,11 @@ public class Post {
 	}
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", titolo=" + titolo + ", testo=" + testo + ", dataCreazione=" + dataCreazione + "]";
+		return "Post [id=" + id + ", titolo=" + titolo + ", testo=" + testo + ", dataCreazione=" + dataCreazione
+				+ ", idUtente=" + idUtente + "]";
 	}
+	
+	
 	
 
 }

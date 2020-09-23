@@ -30,12 +30,19 @@ PostService postService;
 	
 	@GetMapping("/new")
 	public String nuovoPost() {
-		return "utenti/nuovo-post";
+		return "/nuovo-post";
 	}
 
+//	@PostMapping("/")
+//	public String createPost(Post post) {
+//		postService.creaPost(post);
+//		return "redirect:/facciaLibro/";
+//	}
+	
 	@PostMapping("/")
-	public String createPost(Post post) {
-		postService.creaPost(post);
-		return "redirect:/post/";
+	public String createPost(Post post,Utente utente) {
+		postService.creaPost(post,utente);
+		
+		return "redirect:/facciaLibro/";
 	}
 }

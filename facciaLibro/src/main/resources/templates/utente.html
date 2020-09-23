@@ -13,20 +13,26 @@
 			<tr>
 				<th>Nome</th>
 				<th>Cognome</th>
+				
 				<th>Indirizzo</th>
+				<th>Telefono</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr th:each="utente :${listaUtenti}">
 				<td th:text="${utente.nome}"></td>
 				<td th:text="${utente.cognome}"></td>
+				
 				<td th:text="${utente.indirizzo}"></td>
+				<td th:text="${utente.telefono}"></td>
 				
 				
 				
 			</tr>
 		</tbody>
 	</table>
+	
+	<a href="/facciaLibro/">home</a>
 
 </body>
 </html>

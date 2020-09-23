@@ -1,0 +1,45 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Nuovo Utente</title>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+
+	<form action="/post/" method="POST">
+
+
+		<div id="contenuto_incolonnato">
+			<div class="mb-5">
+				<label for="nomeUtente">Nome:</label> <input id="nomeUtente"
+					type="text" name="nome" >
+			</div>
+			<div class="mb-5">
+				<label for=cognomeUtente>Cognome:</label> <input id="cognomeUtente"
+					type="text" name="cognome" >
+			</div>
+			
+			<div class="mb-5">
+				<label for="titolo">Titolo:</label> <input id="titolo"
+					type="text" name="titolo" >
+			</div>
+
+			<div class="mb-5">
+				<label class="block">Testo:</label>				
+				<textarea rows="4" name="testo">
+            </textarea>
+           
+			</div>
+
+		</div>
+
+		<button type="submit">Invia</button>
+		<button type="reset">Pulisci</button>
+
+	</form>
+</body>
+
+</html>

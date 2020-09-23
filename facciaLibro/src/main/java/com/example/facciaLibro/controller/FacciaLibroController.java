@@ -15,7 +15,7 @@ import com.example.facciaLibro.service.PostService;
 import com.example.facciaLibro.service.UtentiService;
 
 @Controller
-@RequestMapping("/facciaLibrro")
+@RequestMapping("/facciaLibro")
 public class FacciaLibroController {
 	
 	@Autowired
@@ -32,11 +32,11 @@ public List<Utente> primaPagina(Model model) {
 
 	List<Utente> primaPagina=facciaLibroService.primaPagina();
 
-//	List<Utente> listaUtenti = utentiService.leggiUtenti();
-//	
-//	List<Post> listaPost=postService.leggiPost();
-//	System.out.println("Utenti: " + listaUtenti);
-//	System.out.println("Post:" +listaPost);
+	List<Utente> listaUtenti = utentiService.leggiUtenti();
+	List<Post> listaPost = postService.leggiPost();
+	model.addAttribute("listaUtenti", listaUtenti);
+	model.addAttribute("listaPost", listaPost);
+
 	return primaPagina;
 	
 }
