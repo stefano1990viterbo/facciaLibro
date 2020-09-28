@@ -1,0 +1,121 @@
+@charset "ISO-8859-1";
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+	;
+
+@import
+	url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap')
+	;
+
+body {
+	/*font-family: 'Roboto', sans-serif;*/
+	background: #F1EEE6;
+	font-family: "Roboto", Verdana, sans-serif;
+	width: 80%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.titolo {
+	display: inline;
+	font-family: "Lobster";
+	font-size: 50px;
+	color: #f1eee6;
+}
+
+#icoUtente {
+	width: 3%;
+}
+
+#utente {
+	display: inline;
+	text-align: right;
+	margin-left: 72%;
+	font-family: "Lobster";
+}
+
+.tebellaAllargata {
+	margin: auto;
+	border: solid;
+	border-radius: inherit;
+	border-color: #303082a1;
+	border-block-start: none;
+}
+
+.intestazione {
+	/*background:#b9e8c8;*/
+	background-image: url('/image/lavagna.jpg');
+	background-repeat: round;
+	border-radius: 5px;
+	box-shadow: 2px 5px 12px #4c2525;
+	text-shadow: 2px 2px 2px dimgrey;
+}
+
+.contorno {
+	/*background-color: #f1d3a0;*/
+	background-image: url('/image/lavagna.jpg');
+	background-repeat: round;
+	border-radius: 5px;
+	text-align: center;
+	 padding-top: 2px;
+	   margin-top: 8px;
+	       box-shadow: 2px 5px 12px #4c2525;
+}
+
+.tabella {
+	background-color:#ffffff00;
+	border-radius: 5px;
+	box-shadow: 0px 0px 25px #751212;
+	margin: 1%;
+	border: solid;
+	border-radius: inherit;
+	border-color: #6d0505a1;
+   
+  
+
+}
+
+#nome {
+	background-color: cadetblue;
+	border-radius: 5px;
+}
+
+.nomeContenuto {
+	background-color: #afdadc7d; 
+	
+/* 	border-color: #92c8cac7; */
+/* 	border-style: solid; */
+}
+
+#titoloCommento {
+	background-color: darksalmon;
+	border-radius: 5px;
+}
+
+.titoloPostContenuto {
+	background-color: #f3d2c873;
+/* 	border-style: solid; */
+/* 	border-color: #f3baa7; */
+}
+
+#post {
+	background-color: #9494f1;
+	border-radius: 5px;
+}
+
+.postContenuto {
+	background-color: #ccccfba6;
+/*     border-style: solid; */
+/*     border-color: #d3d3fb00; */
+}
+
+@
+keyframes rotazione { 100% {
+	transform: rotate(360deg);
+}
+
+.numeroPost {
+	color: orange;
+}
+}

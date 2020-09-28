@@ -41,6 +41,7 @@ public List<Utente> primaPagina(Model model) {
 
 	return primaPagina;
 	
+	
 }
 
 @GetMapping("/{idUtente}")

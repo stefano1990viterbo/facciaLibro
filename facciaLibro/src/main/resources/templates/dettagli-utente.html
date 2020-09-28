@@ -19,9 +19,9 @@
 	<table>
 		<thead>
 			<tr>
-
-				<th>post</th>
-
+				<th>data</th>
+				<th>titolo</th>
+				<th>testo</th>
 
 			</tr>
 		</thead>
@@ -29,7 +29,7 @@
 		<tbody>
 			<tr th:each="p :${listaPost}">
 
-
+				<td th:text="${p.dataCreazione}"></td>
 				<td th:text="${p.titolo}"></td>
 
 
@@ -39,7 +39,7 @@
 			</tr>
 		</tbody>
 	</table>
-
+	<a href="/facciaLibro/">home</a>
 </body>
 
 </html>

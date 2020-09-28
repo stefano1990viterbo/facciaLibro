@@ -34,6 +34,7 @@ public class PostService {
 		
 		
 		
+		
 		for (Utente utenteAggiornare : listaUtente) {
 
 			if (utenteConfrontare.getNome().equalsIgnoreCase(utenteAggiornare.getNome())
@@ -50,9 +51,6 @@ public class PostService {
 			}
 
 		}
-
-//		System.out.println("DEBUG post " +utenteConfrontare);
-//		postRepository.save(post);
 
 	}
 

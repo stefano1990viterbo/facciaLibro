@@ -4,45 +4,76 @@
 <head>
 <title>faccia libro</title>
 <meta charset="utf-8">
+<!-- <link rel="stylesheet" -->
+<!-- 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+
+<link href="/css/stile.css" rel="stylesheet">
 
 </head>
 
 <body>
+	<div class="intestazione">
 
-	<h1>FacciALibrO</h1>
+		<h1 class="titolo">FacciALibrO</h1>
 
-	<table>
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Titolo</th>
-				
-				<th>post</th>
-				<th>idutente</th>
-				
-			</tr>
-		</thead>
-		
-		<tbody>
-			<tr th:each="p :${listaPost}">
-			
-			<td th:text="${p.nomeUtente}"></td>
-				<td th:text="${p.titolo}"></td>
-				<td th:text="${p.testo}"></td>
-				
-				<td><a th:href="${p.idUtente}" th:text="${p.idUtente}">
-							</a></td>
-			
-			</tr>
-		</tbody>
-	</table>
-	
-	
-	
-	
-	<a href="/post/new">inserisci un nuovo post</a>
-	<br>
+		<a id="utente" href="/utente/"> <img id="icoUtente"
+			src="/image/icoUtente.png">
+		</a>
+
+
+	</div>
+
+	<div class="contorno">
+		<table class="tabella">
+
+			<thead class="thead thead-dark">
+				<tr>
+					<th id="nome">Nome</th>
+					<th id="titoloCommento">Titolo</th>
+
+					<th id="post">post</th>
+
+
+					<th></th>
+					<th><a href="/post/new"><em
+							class="fas fa-plus-circle text-primary"></em></a></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="p :${listaPost}">
+
+					<td class="nomeContenuto"><a th:text="${p.nomeUtente}"
+						th:href="${p.idUtente}"> </a></td>
+					<td class="titoloPostContenuto" th:text="${p.titolo}"></td>
+					<td class="postContenuto" th:text="${p.testo}"></td>
+
+
+
+				</tr>
+
+			</tbody>
+		</table>
+		<hr>
+		<p>
+			<span th:if="${#lists.isEmpty(listaPost)}"> Non ci sono post </span>
+			<span th:unless="${#lists.isEmpty(listaPost)}"> Ci sono <span
+				th:text="${#lists.size(listaPost)}"></span> post
+			</span>
+		</p>
+
+	</div>
+
+
+
+
+
 	<a href="/utente/">utenti</a>
+	<br>
 	<a href="/utente/new">registrati</a>
 
 </body>

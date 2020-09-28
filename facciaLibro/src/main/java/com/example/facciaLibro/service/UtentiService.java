@@ -75,13 +75,18 @@ public class UtentiService {
 	}
 
 	public void controlloTelefono(Utente utente) {
-		List<Telefono> telefonoDaSalvare = utente.getTelefono();
-		if (utente.getTelefono() != null) {
-			List<Telefono> telefonoSalvato = telefonoService.creaTelefono(telefonoDaSalvare);
-			utente.setTelefono(telefonoSalvato);
+		System.out.println("utente telefono "+utente.getTelefono());
+		if (utente.getTelefono() != null) {		
+		utente.setTelefono(telefonoService.creaTelefono(utente));
+
+			
 		}
 
 	}
+	
+	
+	
+	
 
 	public List<Utente> leggiUtenti() {
 		return (List<Utente>) utentiRepository.findAll();

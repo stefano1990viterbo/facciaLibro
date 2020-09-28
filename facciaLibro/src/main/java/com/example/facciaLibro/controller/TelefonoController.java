@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.facciaLibro.entity.Indirizzo;
 import com.example.facciaLibro.entity.Telefono;
+import com.example.facciaLibro.entity.Utente;
 import com.example.facciaLibro.service.IndirizzoService;
 import com.example.facciaLibro.service.TelefonoService;
 
@@ -21,11 +23,28 @@ public class TelefonoController {
 	@Autowired
 	TelefonoService telefonoService;
 
-	@PostMapping("/")
-	public String createTelefono(List<Telefono> telefono) {
-
-		System.out.println("telefono "+telefono);
-		telefonoService.creaTelefono(telefono);
-		return "redirect:/telefono/";
-	}
+//	@PostMapping("/")
+//	public String createTelefono(List<Telefono> telefono) {
+//
+//		System.out.println("telefono "+telefono);
+//		telefonoService.creaTelefono(telefono);
+//		return "redirect:/telefono/";
+//	}
+	
+	
+//	@GetMapping("/new")
+//	public String nuovoTelefono() {
+//		return "/nuovo-telefono";
+//	}
+	
+//	@PostMapping("/")
+//	public String createTelefono(Telefono telefono) {
+//
+//		System.out.println("telefono "+telefono);
+//		telefonoService.creaTelefono2(telefono);
+//		
+//		return "redirect:/telefono/";
+//	}
+	
+	
 }

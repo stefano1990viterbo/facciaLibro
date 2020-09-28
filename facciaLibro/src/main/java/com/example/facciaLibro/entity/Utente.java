@@ -111,7 +111,7 @@ public class Utente {
 	@Override
 	public String toString() {
 		return "Utente [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", annoNascita=" + annoNascita
-				+ ", indirizzo=" + indirizzo + ", telefono=" + telefono + ", post=" + post + ", dataCreazione="
+				+ ", indirizzo=" + indirizzo +   ", dataCreazione="
 				+ dataCreazione + ", dataModifica=" + dataModifica + "]";
 	}
 	
