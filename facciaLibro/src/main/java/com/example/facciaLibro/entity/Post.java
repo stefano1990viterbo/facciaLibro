@@ -1,6 +1,7 @@
 package com.example.facciaLibro.entity;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,6 +18,16 @@ public class Post {
 	private String testo;
 	private LocalDateTime dataCreazione=LocalDateTime.now();
 	
+	
+	
+	private String dataFormattata;
+	
+	public String getDataFormattata() {
+		return dataFormattata;
+	}
+	public void setDataFormattata(String dataFormattata) {
+		this.dataFormattata = dataFormattata;
+	}
 	private Long idUtente;
 	private String nomeUtente;
 

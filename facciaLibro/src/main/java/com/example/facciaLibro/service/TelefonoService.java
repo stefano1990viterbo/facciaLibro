@@ -27,6 +27,12 @@ public class TelefonoService {
 				telefonoRepository.save(numeroDaSalvare);
 				telefoniSalvati.add(numeroDaSalvare);
 			}
+			else {
+				numeroDaSalvare.setNumero("");
+				telefonoRepository.save(numeroDaSalvare);
+				telefoniSalvati.add(numeroDaSalvare);
+			}
+			
 		}
 		return telefoniSalvati;
 	}

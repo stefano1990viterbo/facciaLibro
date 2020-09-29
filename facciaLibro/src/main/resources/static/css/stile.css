@@ -9,29 +9,50 @@
 	;
 
 body {
-	/*font-family: 'Roboto', sans-serif;*/
-	background: #F1EEE6;
+	background-image: url('/image/lavagna2.jpg');
+	background-size: cover;
+	background-size: 100% 100%;
+	/*background-repeat: no-repeat;*/
 	font-family: "Roboto", Verdana, sans-serif;
 	width: 80%;
 	margin: auto;
-	margin-top: 10px;
+	margin-top: 60px;
+	padding: 5%;
 }
 
 .titolo {
 	display: inline;
 	font-family: "Lobster";
 	font-size: 50px;
-	color: #f1eee6;
+	color: #ffe8a9;
+	text-decoration: none;
+}
+
+.numeroDati {
+	display: inline;
+	text-align: right;
+	margin-left: 72%;
+	font-size: 25px;
+	color: red;
 }
 
 #icoUtente {
-	width: 3%;
+	width: 10%;
+	margin-left: -10%;
+	margin-bottom: -1%;
 }
 
 #utente {
 	display: inline;
 	text-align: right;
-	margin-left: 72%;
+	margin-left: 76%;
+	font-family: "Lobster";
+}
+
+#registrati {
+	display: inline;
+	text-align: right;
+	margin-left: -13%;
 	font-family: "Lobster";
 }
 
@@ -43,13 +64,37 @@ body {
 	border-block-start: none;
 }
 
+#contenuto_incolonnato {
+	display: flex;
+	flex: 50%;
+	flex-direction: row;
+	margin: -1%;
+	margin-top: 2px;
+}
+
+.colonna {
+	padding: 4%;
+	border-style: solid;
+	margin-top: 10px;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 2px;
+	margin: 1%;
+	box-shadow: 2px 5px 12px #4c2525;
+	border-style: groove;
+	border-color: coral;
+	box-shadow: 2px 5px 12px #4c2525;
+}
+
 .intestazione {
 	/*background:#b9e8c8;*/
-	background-image: url('/image/lavagna.jpg');
+	/* 	background-image: url('/image/lavagna.jpg'); */
 	background-repeat: round;
 	border-radius: 5px;
 	box-shadow: 2px 5px 12px #4c2525;
 	text-shadow: 2px 2px 2px dimgrey;
+	border-style: groove;
+	border-color: coral;
 }
 
 .contorno {
@@ -58,56 +103,67 @@ body {
 	background-repeat: round;
 	border-radius: 5px;
 	text-align: center;
-	 padding-top: 2px;
-	   margin-top: 8px;
-	       box-shadow: 2px 5px 12px #4c2525;
+	padding-top: 2px;
+	margin-top: 2%;
+	box-shadow: 2px 5px 12px #4c2525;
+	border-style: groove;
+	border-color: coral;
+}
+
+.cornice {
+	background-image: url('/image/lavagna.jpg');
+	background-repeat: round;
+	border-radius: 5px;
+	text-align: center;
+	padding-top: 2px;
+	margin-top: 8px;
+	box-shadow: 2px 5px 12px #4c2525;
+	border-style: groove;
+	border-color: coral;
+	height: 700px;
 }
 
 .tabella {
-	background-color:#ffffff00;
+	background-color: #ffffff00;
 	border-radius: 5px;
-	box-shadow: 0px 0px 25px #751212;
 	margin: 1%;
 	border: solid;
 	border-radius: inherit;
-	border-color: #6d0505a1;
-   
-  
-
+	border-color: #ef7a5057;
 }
 
 #nome {
 	background-color: cadetblue;
-	border-radius: 5px;
+/* 	border-radius: 5px; */
 }
 
 .nomeContenuto {
-	background-color: #afdadc7d; 
-	
-/* 	border-color: #92c8cac7; */
-/* 	border-style: solid; */
+	background-color: #afdadc7d;
+
+	/* 	border-color: #92c8cac7; */
+	/* 	border-style: solid; */
 }
 
 #titoloCommento {
 	background-color: darksalmon;
-	border-radius: 5px;
+/* 	border-radius: 5px; */
 }
 
 .titoloPostContenuto {
 	background-color: #f3d2c873;
-/* 	border-style: solid; */
-/* 	border-color: #f3baa7; */
+	/* 	border-style: solid; */
+	/* 	border-color: #f3baa7; */
 }
 
 #post {
 	background-color: #9494f1;
-	border-radius: 5px;
+/* 	border-radius: 5px; */
 }
 
 .postContenuto {
 	background-color: #ccccfba6;
-/*     border-style: solid; */
-/*     border-color: #d3d3fb00; */
+	/*     border-style: solid; */
+	/*     border-color: #d3d3fb00; */
 }
 
 @
@@ -117,5 +173,9 @@ keyframes rotazione { 100% {
 
 .numeroPost {
 	color: orange;
+}
+
+.logIniziale {
+	margin-left: 50%;
 }
 }

@@ -4,35 +4,135 @@
 <head>
 <meta charset="utf-8">
 <title>Utenti</title>
+<meta charset="utf-8">
+<!-- <link rel="stylesheet" -->
+<!-- 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+
+<link href="/css/stile.css" rel="stylesheet">
 </head>
 <body>
-	<h1>utenti</h1>
 
-	<table>
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Cognome</th>
-				
-				<th>Indirizzo</th>
-				<th>Telefono</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="utente :${listaUtenti}">
-				<td th:text="${utente.nome}"></td>
-				<td th:text="${utente.cognome}"></td>
-				
-				<td th:text="${utente.indirizzo}"></td>
-				<td th:text="${utente.telefono}"></td>
-				
-				
-				
-			</tr>
-		</tbody>
-	</table>
-	
+	<div>
+		<div class="intestazione">
+
+
+		
+			
+			<a href="/facciaLibro/" class="titolo"  >FacciALibrO</a>
+			
+			
+
+			<a id="utente" href="/utente/"><img id="icoUtente"
+				src="/image/icoUtente.png"> </a>
+
+		</div>
+	</div>
+	<div class="contorno">
+		<table class="tabella">
+			<thead class="thead thead-dark">
+				<tr>
+					<th id="nome">Nome</th>
+					<th id="nome">Cognome</th>
+
+					<th id="titoloCommento">Indirizzo</th>
+					<th id="post">Telefono</th>
+
+
+
+
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="utente :${listaUtenti}">
+					<td class="nomeContenuto" th:text="${utente.nome}"></td>
+					<td class="nomeContenuto" th:text="${utente.cognome}"></td>
+
+					<td class="titoloPostContenuto"
+						th:text="${utente.indirizzo.indirizzoCompleto}"></td>
+					<td class="postContenuto" th:text=" ${utente.telefono[0]}"></td>
+					<td class="postContenuto" th:text=" ${utente.telefono[1]}"></td>
+
+
+
+				</tr>
+			</tbody>
+		</table>
+
+
+	</div>
+
+
+<br>
+	<div id="contenuto_incolonnato">
+			<div class="colonna">
+				<h2>testo casuale uno</h2>
+				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+					Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+					penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+					sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+					vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+					imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+					mollis pretium. Integer tincidunt. Cras dAenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+					penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+					sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+					vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+					imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+					mollis pretium. Integer tincapibus. Vivamus elementum
+					semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+					porttitor eu, consequat vitae, eleifend ac, enim.</p>
+			</div>
+			<div class="colonna">
+				<h2>testo casuale due</h2>
+				<p>Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+					tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque
+					rutrum. Aenean imperdiet. Etiam ultriciAenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+					penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+					sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+					vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+					imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+					mollis pretium. Integer tinces nisi vel augue. Curabitur
+					ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
+					tempus, tellus eget condimentum rhoncus, sem quam semper libero,
+					sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
+					vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et
+					ante tincidunt tempus. Donec vitae sapien ut libero venenatis
+					faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus
+					tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
+					sodales sagittis magna. Sed consequat, leo eget bibendum sodales,
+					augue velit cursus nunc,</p>
+			</div>
+			<div class="colonna">
+				<h2>testo casuale due</h2>
+				<p>Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
+					tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque
+					rutrum. Aenean imperdiet. Etiam ultriciAenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+					penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+					Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+					sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+					vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+					imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+					mollis pretium. Integer tinces nisi vel augue. Curabitur
+					ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
+					tempus, tellus eget condimentum rhoncus, sem quam semper libero,
+					sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
+					vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et
+					ante tincidunt tempus. Donec vitae sapien ut libero venenatis
+					faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus
+					tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
+					sodales sagittis magna. Sed consequat, leo eget bibendum sodales,
+					augue velit cursus nunc,</p>
+			</div>
+
+		</div>
+
+
 	<a href="/facciaLibro/">home</a>
-
 </body>
 </html>

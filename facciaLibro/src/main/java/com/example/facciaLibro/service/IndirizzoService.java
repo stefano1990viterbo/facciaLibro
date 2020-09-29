@@ -12,14 +12,25 @@ public class IndirizzoService {
 
 	@Autowired
 	IndirizzoRepository indirizzoRepository;
-	
-	
 
-	public Indirizzo associaIndirizzo(Indirizzo indirizzo) {		
-		Indirizzo indirizzoSalvato=indirizzoRepository.save(indirizzo);
-		
+	// private String indirizzoCompleto;
+
+//	public String getIndirizzoCompleto() {
+//		return indirizzoCompleto;
+//	}
+//
+//	public void setIndirizzoCompleto(String indirizzoCompleto) {
+//		this.indirizzoCompleto = indirizzoCompleto;
+//	}
+
+	public Indirizzo associaIndirizzo(Indirizzo indirizzo) {
+		Indirizzo indirizzoSalvato = indirizzoRepository.save(indirizzo);
+
+		indirizzoSalvato.setIndirizzoCompleto(indirizzoSalvato.getVia() +" "+indirizzoSalvato.getCivico()
+				+" "+ indirizzoSalvato.getComune() + " "+indirizzoSalvato.getProvincia());
+
 		return indirizzoSalvato;
-		
-			}
-	
+
+	}
+
 }

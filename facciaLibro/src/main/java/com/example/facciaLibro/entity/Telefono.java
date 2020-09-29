@@ -24,6 +24,9 @@ public class Telefono {
 
 	private LocalDateTime dataCreazione = LocalDateTime.now();
 	private LocalDateTime dataModifica = LocalDateTime.now();
+	
+	
+	
 
 	public String getNumero() {
 		return numero;
@@ -59,8 +62,7 @@ public class Telefono {
 
 	@Override
 	public String toString() {
-		return "Telefono [id=" + id + ", numero=" + numero + ", dataCreazione=" + dataCreazione + ", dataModifica="
-				+ dataModifica + "]";
+		return numero+"" ;
 	}
 
 }

@@ -89,6 +89,7 @@ public class UtentiService {
 	
 
 	public List<Utente> leggiUtenti() {
+	
 		return (List<Utente>) utentiRepository.findAll();
 	}
 }

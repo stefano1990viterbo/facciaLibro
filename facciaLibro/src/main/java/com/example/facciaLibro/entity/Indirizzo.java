@@ -24,8 +24,16 @@ public class Indirizzo {
 	private String provincia;
 	private LocalDateTime dataCreazione=LocalDateTime.now();
 	private LocalDateTime dataModifica=LocalDateTime.now();
+
+private String indirizzoCompleto;
 	
 	
+	public String getIndirizzoCompleto() {
+	return indirizzoCompleto;
+}
+public void setIndirizzoCompleto(String indirizzoCompleto) {
+	this.indirizzoCompleto = indirizzoCompleto;
+}
 	public Long getId() {
 		return id;
 	}
@@ -68,10 +76,16 @@ public class Indirizzo {
 	public void setDataModifica(LocalDateTime dataModifica) {
 		this.dataModifica = dataModifica;
 	}
+	
+	
+	
+	
 	@Override
 	public String toString() {
-		return "Indirizzo [id=" + id + ", via=" + via + ", civico=" + civico + ", comune=" + comune + ", provincia="
-				+ provincia + ", dataCreazione=" + dataCreazione + ", dataModifica=" + dataModifica + "]";
+		return   via+" "  + civico +" " + comune +" " 
+				+ provincia  ;
 	}
+	
+	
 	
 }

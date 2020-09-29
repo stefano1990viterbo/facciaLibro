@@ -11,6 +11,8 @@ import com.example.facciaLibro.entity.Post;
 public interface PostRepository extends CrudRepository<Post, Long> {
 
 	List<Post> findByIdUtente(Long idUtente);
+
+	
 	
 	
 
