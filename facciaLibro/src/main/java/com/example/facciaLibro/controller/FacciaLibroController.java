@@ -49,6 +49,8 @@ public String show(@PathVariable Long idUtente, Model model) {
 	List<Post> postUtente = new ArrayList<Post>();
 	Utente utenteSelezionato = utentiService.utenteFindById(idUtente);
 	postUtente = postService.postByIdUtente(idUtente);
+	
+	
 	for(Post lista: postUtente) {
 		System.out.println("DEBUG LISTA "+lista);
 	}

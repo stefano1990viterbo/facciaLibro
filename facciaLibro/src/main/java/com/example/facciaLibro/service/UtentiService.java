@@ -22,19 +22,16 @@ public class UtentiService {
 
 	@Autowired
 	TelefonoService telefonoService;
-	
+
 //	@Autowired
 //	Model model;
-	
-	
+
 	public Utente utenteFindById(Long id) {
-		System.out.println("debug idselezionato " +id);
+
 		Utente utenteSelezionato = utentiRepository.findById(id).get();
-		//model.addAttribute("utenteTrovato", utenteSelezionato);
+
 		return utenteSelezionato;
 	}
-	
-	
 
 	public String creaUtente(Utente utente) {
 
@@ -42,25 +39,21 @@ public class UtentiService {
 			controlloIndirizzo(utente);
 			controlloTelefono(utente);
 			utentiRepository.save(utente);
-			return null ;
-		}
-		else {
+			return null;
+		} else {
 //			String errore="c'è gia un utente con queste credenziali";
 //			model.addAttribute("errore", errore);	
-		System.out.println("c'è gia un utente con queste credenziali");
-		return "redirect:/errore/";
-		
+			System.out.println("c'è gia un utente con queste credenziali");
+			return "redirect:/errore/";
+
 		}
 	}
-
-	
-	
 
 	public int controlloUtenteUguale(Utente utente) {
 		int i = 0;
 		for (Utente controllo : leggiUtenti()) {
 			if (utente.getNome().equalsIgnoreCase(controllo.getNome())
-					&& utente.getCognome().equalsIgnoreCase(controllo.getCognome())) {	
+					&& utente.getCognome().equalsIgnoreCase(controllo.getCognome())) {
 				i++;
 				break;
 			}
@@ -75,21 +68,16 @@ public class UtentiService {
 	}
 
 	public void controlloTelefono(Utente utente) {
-		System.out.println("utente telefono "+utente.getTelefono());
-		if (utente.getTelefono() != null) {		
-		utente.setTelefono(telefonoService.creaTelefono(utente));
+		System.out.println("utente telefono " + utente.getTelefono());
+		if (utente.getTelefono() != null) {
+			utente.setTelefono(telefonoService.creaTelefono(utente));
 
-			
 		}
 
 	}
-	
-	
-	
-	
 
 	public List<Utente> leggiUtenti() {
-	
+
 		return (List<Utente>) utentiRepository.findAll();
 	}
 }

@@ -4,41 +4,93 @@
 <head>
 <title>faccia libro</title>
 <meta charset="utf-8">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+
+<link href="/css/stile.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-	<h1>dettagli utente</h1>
+	<div class="intestazione">
 
-	<p th:text="${utenteSelezionato}"></p>
+		<a href="/facciaLibro/" class="titolo">FacciALibrO</a> <a
+			id="utente" href="/utente/"><img id="icoUtente"
+			src="/image/icoUtente.png"> </a>
+
+	</div>
+
+	<div class="dettagliUtente">
+		
+			<h2 class="titolo">Dettagli Utente</h2>
+			<br>
+			<p id="p_inline">Nome:</p>
+			<p id="p_inline" th:text="${utenteSelezionato.nome}"></p>			
+			<hr>
+			<p id="p_inline">Cognome:</p>
+			<p id="p_inline" th:text="${utenteSelezionato.cognome}"></p>
+			<hr id="trasparenza_linea">
+			<p id="p_inline">Anno di Nascita:</p>
+			<p id="p_inline" th:text="${utenteSelezionato.annoNascita}"></p>
+			<hr>
+			<p id="p_inline">Indirizzo:</p>
+			<p id="p_inline" th:text="${utenteSelezionato.indirizzo}"></p>
+			<hr>
+			<p id="p_inline">Telefono:</p>
+			<p id="p_inline" th:text="${utenteSelezionato.telefono[0]}"></p>
+			<p id="p_inline" th:text="${utenteSelezionato.telefono[1]}"></p>
+		
+		
+	</div>
+
+
+	<div class="contorno">
+	<h2 class="titolo">Post</h2>
+		<table class="tabella">
+
+			<thead class="thead thead-dark">
+				<tr>
+					<th id="nome">data</th>
+					<th id="titoloCommento">Titolo</th>
+
+					<th id="post">testo</th>
+
+
+
+					<th><a href="/post/new"><em
+							class="fas fa-plus-circle text-primary"></em></a></th>
+					<th></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr th:each="p :${listaPost}">
+
+					<td class="postContenuto" th:text="${p.dataFormattata}"></td>
+					<td class="titoloPostContenuto" th:text="${p.titolo}"></td>
+
+
+					<td class="postContenuto" th:text="${p.testo}"></td>
 
 
 
 
-	<table>
-		<thead>
-			<tr>
-				<th>data</th>
-				<th>titolo</th>
-				<th>testo</th>
+				</tr>
 
-			</tr>
-		</thead>
+			</tbody>
+		</table>
+		<hr>
+		<p>
+			<span th:if="${#lists.isEmpty(listaPost)}"> Non ci sono post </span>
+			<span th:unless="${#lists.isEmpty(listaPost)}"> Ci sono <span
+				th:text="${#lists.size(listaPost)}"></span> post
+			</span>
+		</p>
 
-		<tbody>
-			<tr th:each="p :${listaPost}">
+	</div>
 
-				<td th:text="${p.dataCreazione}"></td>
-				<td th:text="${p.titolo}"></td>
-
-
-				<td th:text="${p.testo}"></td>
-
-
-			</tr>
-		</tbody>
-	</table>
 	<a href="/facciaLibro/">home</a>
 </body>
 

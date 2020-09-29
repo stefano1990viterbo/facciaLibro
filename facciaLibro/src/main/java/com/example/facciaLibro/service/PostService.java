@@ -73,6 +73,8 @@ public class PostService {
 	public List<Post> postByIdUtente(Long idUtente) {
 		List<Post> postUtenteSelezionato = new ArrayList<>();
 		postUtenteSelezionato = postRepository.findByIdUtente(idUtente);
+		
+		postUtenteSelezionato.sort((o2, o1) -> o1.getDataCreazione().compareTo(o2.getDataCreazione()));
 
 		return postUtenteSelezionato;
 	}

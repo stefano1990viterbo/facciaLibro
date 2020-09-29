@@ -49,6 +49,7 @@ public class UtentiController {
 
 		Utente utenteSelezionato = utentiService.utenteFindById(id);
 		model.addAttribute("utenteTrovato", utenteSelezionato);
+		
 		return "dettagli-utente";
 	}
 }

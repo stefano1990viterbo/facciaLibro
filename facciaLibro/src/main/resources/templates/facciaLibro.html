@@ -17,60 +17,63 @@
 <body>
 	<div>
 		<div class="intestazione">
-			
-				<h1 class="titolo">FacciALibrO</h1>
-			
 
-		
-				<a id="utente" href="/utente/"><img id="icoUtente"
-					src="/image/icoUtente.png"> </a> <a id="registrati"
-					href="/utente/new"><i class="fas fa-user-plus"></i></a>
-		
+			<h1 class="titolo_h1">FacciALibrO</h1>
+
+
+
+			<a id="utente" href="/utente/"><img id="icoUtente"
+				src="/image/icoUtente.png"> </a> <a id="registrati"
+				href="/utente/new"><i class="fas fa-user-plus"></i></a>
+
 
 
 		</div>
 
-		<div class="contorno">
-			<table class="tabella">
+		<div class="contorno" >
+			
+				<h1 class="titolo">Post</h1>
+				<table class="tabella">
 
-				<thead class="thead thead-dark">
-					<tr>
-						<th id="nome">Nome</th>
-						<th id="titoloCommento">Titolo</th>
+					<thead class="thead thead-dark">
+						<tr>
+							<th id="nome">Nome</th>
+							<th id="titoloCommento">Titolo</th>
 
-						<th id="post">post</th>
-
-
-						<th id="post">data</th>
-						<th ><a href="/post/new"><em
-								class="fas fa-plus-circle text-primary"></em></a></th>
-						<th></th>
-					</tr>
-				</thead>
-
-				<tbody>
-					<tr th:each="p :${listaPost}">
-
-						<td class="nomeContenuto"><a th:text="${p.nomeUtente}"
-							th:href="${p.idUtente}"> </a></td>
-						<td class="titoloPostContenuto" th:text="${p.titolo}"></td>
-						<td class="postContenuto" th:text="${p.testo}"></td>
-						<td class="postContenuto" th:text="${p.dataFormattata}"></td>
+							<th id="post">post</th>
 
 
+							<th id="post">data</th>
+							<th><a href="/post/new"><em
+									class="fas fa-plus-circle text-primary"></em></a></th>
+							<th></th>
+						</tr>
+					</thead>
 
-					</tr>
+					<tbody>
+						<tr th:each="p :${listaPost}">
 
-				</tbody>
-			</table>
-			<hr>
-			<p>
-				<span th:if="${#lists.isEmpty(listaPost)}"> Non ci sono post
-				</span> <span th:unless="${#lists.isEmpty(listaPost)}"> Ci sono <span
-					th:text="${#lists.size(listaPost)}"></span> post
-				</span>
-			</p>
+							<td class="nomeContenuto"><a th:text="${p.nomeUtente}"
+								th:href="${p.idUtente}"> </a></td>
+							<td class="titoloPostContenuto" th:text="${p.titolo}"></td>
+							<td class="postContenuto" th:text="${p.testo}"></td>
+							<td class="postContenuto" th:text="${p.dataFormattata}"></td>
 
+
+
+						</tr>
+
+					</tbody>
+				</table>
+				<hr>
+				<p>
+					<span th:if="${#lists.isEmpty(listaPost)}"> Non ci sono post
+					</span> <span th:unless="${#lists.isEmpty(listaPost)}"> Ci sono <span
+						th:text="${#lists.size(listaPost)}"></span> post
+					</span>
+				</p>
+				
+			</div>
 		</div>
 
 
@@ -106,38 +109,8 @@
 
 		</div>
 
-		<div id="contenuto_incolonnato">
-			<div class="colonna">
-				<h2>testo casuale uno</h2>
-				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-					Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-					penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-					Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-					sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-					vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-					imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-					mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-					semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-					porttitor eu, consequat vitae, eleifend ac, enim.</p>
-			</div>
-			<div class="colonna">
-				<h2>testo casuale due</h2>
-				<p>Aliquam lorem ante, dapibus in, viverra quis, feugiat a,
-					tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque
-					rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur
-					ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas
-					tempus, tellus eget condimentum rhoncus, sem quam semper libero,
-					sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-					vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et
-					ante tincidunt tempus. Donec vitae sapien ut libero venenatis
-					faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus
-					tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec
-					sodales sagittis magna. Sed consequat, leo eget bibendum sodales,
-					augue velit cursus nunc,</p>
-			</div>
 
-		</div>
-	</div>
+	
 </body>
 
 </html>
