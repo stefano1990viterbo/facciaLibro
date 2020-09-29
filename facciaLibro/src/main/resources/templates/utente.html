@@ -18,7 +18,7 @@
 	<div>
 		<div class="intestazione">
 
-			<a href="/facciaLibro/" class="titolo"  >FacciALibrO</a>
+			<a href="/facciaLibro/" class="titolo_h1"  >FacciALibrO</a>
 			<a id="utente" href="/utente/"><img id="icoUtente"
 				src="/image/icoUtente.png"> </a>
 
@@ -43,7 +43,10 @@
 			</thead>
 			<tbody>
 				<tr th:each="utente :${listaUtenti}">
-					<td class="nomeContenuto" th:text="${utente.nome}"></td>
+				<td class="nomeContenuto"><a th:text="${utente.nome}"
+								th:href="${utente.id}"> </a></td>
+				
+<!-- 					<td class="nomeContenuto" th:text="${utente.nome}"></td> -->
 					<td class="nomeContenuto" th:text="${utente.cognome}"></td>
 
 					<td class="titoloPostContenuto"
@@ -128,6 +131,11 @@
 		</div>
 
 
-	<a href="/facciaLibro/">home</a>
+	
+	
+	<div id="pieDiPagina">
+
+				<p>FacciaLibro<br>Stefano Ricci<br>versione 1.0.0</p>
+	</div>	
 </body>
 </html>

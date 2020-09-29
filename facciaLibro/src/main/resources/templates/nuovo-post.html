@@ -4,29 +4,45 @@
 <head>
 <title>Nuovo Utente</title>
 <meta charset="utf-8">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
 
+<link href="/css/stile.css" rel="stylesheet">
 </head>
 
 <body>
+<div class="intestazione">
 
+		<a href="/facciaLibro/" class="titolo_h1">FacciALibrO</a> <a
+			id="utente" href="/utente/"><img id="icoUtente"
+			src="/image/icoUtente.png"> </a>
+
+	</div>
+	
+	
+	
+	<div class="dettagliUtente">
+	
 	<form action="/post/" method="POST">
 
 
-		<div id="contenuto_incolonnato">
+	
 			<div class="mb-5">
 				<label for="nomeUtente">Nome:</label> <input id="nomeUtente"
 					type="text" name="nome" >
 			</div>
+			
 			<div class="mb-5">
 				<label for=cognomeUtente>Cognome:</label> <input id="cognomeUtente"
 					type="text" name="cognome" >
 			</div>
-			
+			<hr>
 			<div class="mb-5">
 				<label for="titolo">Titolo:</label> <input id="titolo"
 					type="text" name="titolo" >
 			</div>
-
+<hr>
 			<div class="mb-5">
 				<label class="block">Testo:</label>				
 				<textarea rows="4" name="testo">
@@ -34,12 +50,18 @@
            
 			</div>
 
-		</div>
+		
 
 		<button type="submit">Invia</button>
 		<button type="reset">Pulisci</button>
 
 	</form>
+	
+	</div>
+	<div id="pieDiPaginaPost">
+
+				<p>FacciaLibro<br>Stefano Ricci<br>versione 1.0.0</p>
+	</div>	
 </body>
 
 </html>

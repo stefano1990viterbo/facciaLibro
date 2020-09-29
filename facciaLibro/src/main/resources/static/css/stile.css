@@ -23,7 +23,7 @@ body {
 .titolo_h1{
 	display: inline;
 	font-family: "Lobster";
-	font-size: 40px;
+	font-size: 50px;
 	color: #ffe8a9;
 	text-decoration: none;
 }
@@ -31,7 +31,7 @@ body {
 .titolo {
 	display: inline;
 	font-family: "Lobster";
-	font-size: 50px;
+	font-size: 40px;
 	color: #ffe8a9;
 	text-decoration: none;
 }
@@ -42,6 +42,14 @@ body {
 	margin-left: 72%;
 	font-size: 25px;
 	color: red;
+}
+
+#pieDiPagina{
+	text-align: center;
+}
+#pieDiPaginaPost{
+	margin-top:25%;
+	text-align: center;
 }
 
 #icoUtente {
