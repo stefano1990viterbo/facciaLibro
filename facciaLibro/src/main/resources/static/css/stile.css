@@ -53,11 +53,15 @@ body {
 }
 
 #icoUtente {
-	width: 10%;
-	margin-left: -10%;
-	margin-bottom: -1%;
+	width: 15%;
+    margin-left: 8%;
+    margin-bottom: 0%;
+    margin-right: -4%;
 }
-
+#iconaUtenteTitolo{
+	    margin-right: 0%;
+    margin-left: auto;
+}
 #utente {
 	display: inline;
 	text-align: right;
@@ -84,7 +88,7 @@ body {
 	display: flex;
 	flex: 50%;
 	flex-direction: row;
-	margin: -1%;
+/* 	margin: -1%; */
 	margin-top: 2px;
 }
 

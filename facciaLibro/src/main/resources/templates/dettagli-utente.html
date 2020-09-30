@@ -14,43 +14,49 @@
 
 <body>
 
-	<div class="intestazione">
+	<div class="intestazione" id="contenuto_incolonnato">
+		<div id="formParametro">
+			<a href="/facciaLibro/" class="titolo_h1">FacciALibrO</a>
+		</div>
 
-		<a href="/facciaLibro/" class="titolo_h1">FacciALibrO</a>
-		 <a
-			id="utente" href="/utente/"><img id="icoUtente"
-			src="/image/icoUtente.png"> </a>
+		<div id="iconaUtenteTitolo">
+			<a id="utente" href="/utente/"> <img id="icoUtente"
+				src="/image/icoUtente.png">
+			</a>
+
+		</div>
 
 	</div>
 
 	<div class="dettagliUtente">
-		
-	
-			<h2 class="titolo">Dettagli Utente</h2>
-			<a id="nomeLink" th:href="@{/utente/{id}/edit(id=${utenteSelezionato.id})}">modifica </a>
-			<br>
-			<p id="p_inline">Nome:</p>
-			<p id="p_inline" th:text="${utenteSelezionato.nome}"></p>			
-			<hr>
-			<p id="p_inline">Cognome:</p>
-			<p id="p_inline" th:text="${utenteSelezionato.cognome}"></p>
-			<hr >
-			<p id="p_inline">Anno di Nascita:</p>
-			<p id="p_inline" th:text="${utenteSelezionato.annoNascita}"></p>
-			<hr>
-			<p id="p_inline">Indirizzo:</p>
-			<p id="p_inline" th:text="${utenteSelezionato.indirizzo}"></p>
-			<hr>
-			<p id="p_inline">Telefono:</p>
-			<p id="p_inline" th:text="${utenteSelezionato.telefono[0]}"></p>
-			<p id="p_inline" th:text="${utenteSelezionato.telefono[1]}"></p>
-		
-		
+
+
+		<h2 class="titolo">Dettagli Utente</h2>
+		<a id="nomeLink"
+			th:href="@{/utente/{id}/edit(id=${utenteSelezionato.id})}">modifica
+		</a> <br>
+		<p id="p_inline">Nome:</p>
+		<p id="p_inline" th:text="${utenteSelezionato.nome}"></p>
+		<hr>
+		<p id="p_inline">Cognome:</p>
+		<p id="p_inline" th:text="${utenteSelezionato.cognome}"></p>
+		<hr>
+		<p id="p_inline">Anno di Nascita:</p>
+		<p id="p_inline" th:text="${utenteSelezionato.annoNascita}"></p>
+		<hr>
+		<p id="p_inline">Indirizzo:</p>
+		<p id="p_inline" th:text="${utenteSelezionato.indirizzo}"></p>
+		<hr>
+		<p id="p_inline">Telefono:</p>
+		<p id="p_inline" th:text="${utenteSelezionato.telefono[0]}"></p>
+		<p id="p_inline" th:text="${utenteSelezionato.telefono[1]}"></p>
+
+
 	</div>
 
 
 	<div class="contorno">
-	<h2 class="titolo">Post</h2>
+		<h2 class="titolo">Post</h2>
 		<table class="tabella">
 
 			<thead class="thead thead-dark">
@@ -96,8 +102,10 @@
 
 	<div id="pieDiPagina">
 
-				<p>FacciaLibro<br>Stefano Ricci<br>versione 1.0.0</p>
-	</div>	
+		<p>
+			FacciaLibro<br>Stefano Ricci<br>versione 1.0.0
+		</p>
+	</div>
 </body>
 
 </html>
