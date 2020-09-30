@@ -2,6 +2,8 @@ package com.example.facciaLibro.controller;
 
 import java.util.List;
 
+import javax.jws.WebParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,18 +27,30 @@ public class UtentiController {
 	@Autowired
 	IndirizzoService indirizzoService;
 
-	@GetMapping("/")
-	public List<Utente> getUtenti(Model model) {
-		List<Utente> listaUtenti = utentiService.leggiUtenti();
-		model.addAttribute("listaUtenti", listaUtenti);
 
+	@GetMapping("/")
+	public List<Utente> getUtenti(Model model, @WebParam String nome) {
+		List<Utente> listaUtenti;
+		listaUtenti = listaFiltrata(nome);
+		model.addAttribute("listaUtenti", listaUtenti);
 		return listaUtenti;
 	}
+
+	
 
 	@GetMapping("/new")
 	public String nuovoUtente() {
 		return "/nuovo-utente";
 	}
+	
+	
+	@GetMapping("/{id}/edit")
+	public String edit(@PathVariable Long id, Model model) {
+		Utente utenteDaModificare = utentiService.utenteFindById(id);
+		model.addAttribute("utenteDaModificare", utenteDaModificare);
+		return"edit-utente";
+	}
+	
 
 	@PostMapping("/")
 	public String createUtente(Utente utente) {
@@ -49,7 +63,21 @@ public class UtentiController {
 
 		Utente utenteSelezionato = utentiService.utenteFindById(id);
 		model.addAttribute("utenteSelezionato", utenteSelezionato);
-		
+
 		return "dettagli-utente";
+	}
+	
+	@PostMapping("/{id}")
+	public String update(Utente utente) {
+		utentiService.creaUtente(utente);
+		return "redirect:/utente/";
+	}
+	
+	private List<Utente> listaFiltrata(String nome) {
+		if (nome == null || nome.equalsIgnoreCase("")) {
+			return utentiService.leggiUtenti();
+		} else {
+			return utentiService.leggiUtentiFiltratiPerNome(nome);
+		}
 	}
 }

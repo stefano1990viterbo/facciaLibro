@@ -34,7 +34,7 @@ public class UtentiService {
 
 		Utente utenteSelezionato = utentiRepository.findById(id).get();
 		List<Post> postUtente = postService.postByIdUtente(utenteSelezionato);
-		
+
 		utenteSelezionato.setPost(postUtente);
 
 		return utenteSelezionato;
@@ -55,15 +55,27 @@ public class UtentiService {
 		}
 	}
 
+//	public int controlloUtenteUguale(Utente utente) {
+//		int i = 0;
+//		for (Utente controllo : leggiUtenti()) {
+//			if (utente.getNome().equalsIgnoreCase(controllo.getNome())
+//					&& utente.getCognome().equalsIgnoreCase(controllo.getCognome())) {
+//				i++;
+//				break;
+//			}
+//		}
+//		
+//		return i;
+//	}
 	public int controlloUtenteUguale(Utente utente) {
 		int i = 0;
 		for (Utente controllo : leggiUtenti()) {
-			if (utente.getNome().equalsIgnoreCase(controllo.getNome())
-					&& utente.getCognome().equalsIgnoreCase(controllo.getCognome())) {
+			if (utente.equals(controllo)) {
 				i++;
 				break;
 			}
 		}
+
 		return i;
 	}
 
@@ -85,5 +97,10 @@ public class UtentiService {
 	public List<Utente> leggiUtenti() {
 
 		return (List<Utente>) utentiRepository.findAll();
+	}
+
+	public List<Utente> leggiUtentiFiltratiPerNome(String nome) {
+
+		return (List<Utente>) utentiRepository.findByNome(nome);
 	}
 }

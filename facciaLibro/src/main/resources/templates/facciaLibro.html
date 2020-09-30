@@ -53,7 +53,7 @@
 					<tbody>
 						<tr th:each="p :${listaPost}">
 
-							<td class="nomeContenuto"><a th:text="${p.utenteCreazione.nome}"
+							<td class="nomeContenuto"><a id="nomeLink" th:text="${p.utenteCreazione.nome}"
 								th:href="${p.utenteCreazione.id}"> </a></td>
 							<td class="titoloPostContenuto" th:text="${p.titolo}"></td>
 							<td class="postContenuto" th:text="${p.testo}"></td>
@@ -64,7 +64,7 @@
 
 					</tbody>
 				</table>
-				<hr>
+				<hr class="lineaRossa">
 				<p>
 					<span th:if="${#lists.isEmpty(listaPost)}"> Non ci sono post
 					</span> <span th:unless="${#lists.isEmpty(listaPost)}"> Ci sono <span

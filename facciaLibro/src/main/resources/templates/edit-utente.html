@@ -1,0 +1,76 @@
+<!doctype html>
+<html xmlns:th="http://www.tymeleaf.org" lang="it">
+
+<head>
+<title>Nuovo Utente</title>
+<meta charset="utf-8">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+	rel="stylesheet">
+
+<link href="/css/stile.css" rel="stylesheet">
+</head>
+
+<body>
+	<div>
+		<div class="intestazione">
+
+
+
+
+			<a href="/facciaLibro/" class="titolo_h1">FacciALibrO</a> <a
+				id="utente" href="/utente/"><img id="icoUtente"
+				src="/image/icoUtente.png"> </a>
+
+		</div>
+
+		<div class="contorno">
+
+			<h2 class="titolo">modifica</h2>
+
+
+			<form th:action="@{/utente/} + ${utenteDaModificare.id}"
+
+				th:method="POST">
+
+				<p id="p_inline">Nome:</p>
+				
+				<input id="inputCentro" type="text" name="nome" th:value="${utenteDaModificare.nome}">
+				
+				<br>
+				<p id="p_inline">Cognome:</p>
+				<input id="inputCentro" type="text" name="cognome" th:value="${utenteDaModificare.cognome}"> <br>
+				<p id="p_inline">anno di nascita:</p>
+				<input id="inputCentro" type="text" name="annoNascita" th:value="${utenteDaModificare.annoNascita}"> <br>
+
+				<p id="p_inline">via:</p>
+				<input id="inputCentro" type="text" name="indirizzo.via" th:value="${utenteDaModificare.indirizzo.via}">
+				<p id="p_inline">civico:</p>
+				<input id="inputCentro" type="text" name="indirizzo.civico" th:value="${utenteDaModificare.indirizzo.civico}">
+				<p id="p_inline">comune:</p>
+				<input id="inputCentro" type="text" name="indirizzo.comune" th:value="${utenteDaModificare.indirizzo.comune}">
+				<p id="p_inline">provincia:</p>
+				<input id="inputCentro" type="text" name="indirizzo.provincia" th:value="${utenteDaModificare.indirizzo.provincia}">
+
+				<p id="p_inline">primo telefono:</p>
+				<input id="inputCentro" type="text" name="telefono[0].numero" th:value="${utenteDaModificare.telefono[0].numero}">
+				<p id="p_inline">secondo telefono:</p>
+				<input id="inputCentro" type="text" name="telefono[1].numero" th:value="${utenteDaModificare.telefono[1].numero}">
+
+<input type="submit">
+
+			</form>
+
+
+		</div>
+	</div>
+
+	<div id="pieDiPagina">
+
+		<p>
+			FacciaLibro<br>Stefano Ricci<br>versione 1.0.0
+		</p>
+	</div>
+</body>
+
+</html>

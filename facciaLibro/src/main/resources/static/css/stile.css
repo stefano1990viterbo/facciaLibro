@@ -181,9 +181,53 @@ body {
 	border-radius: inherit;
 	border-color: #ef7a5057;
 }
+.lineaRossa{
+	color:red;
+}
+#centro{
+	display:inline;
+	text-align: center;
+	 color: #ab5535;
+    background: #f0f8ff00;
+        border: none;
+}
+#formCreazione{
+	margin-bottom: 2px;
+}
+#inputCentro{
+	margin-right: 25%;
+}
+#filtro{
+	
+	background-color: #ffffff00;
+	border-radius: 5px;
+	margin: 1%;
+	border: solid;
+	border-radius: inherit;
+	border-color: #ef7a5057;
+	    width: fit-content;
+}
+#nomeLink{
+	color:#922e09;
+	text-decoration: none;
+	
+}
+#cerca{
+	
+	    color: #ab5535;
+    background: #f0f8ff00;
+        border: none;
+}
+
+#testo_filtro{
+	    background: bisque;
+    border-radius: 10%;
+}
 
 #p_inline {
 	display: inline;
+
+
 }
 
 #nome {

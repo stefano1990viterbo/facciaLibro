@@ -16,7 +16,8 @@
 
 	<div class="intestazione">
 
-		<a href="/facciaLibro/" class="titolo_h1">FacciALibrO</a> <a
+		<a href="/facciaLibro/" class="titolo_h1">FacciALibrO</a>
+		 <a
 			id="utente" href="/utente/"><img id="icoUtente"
 			src="/image/icoUtente.png"> </a>
 
@@ -24,14 +25,16 @@
 
 	<div class="dettagliUtente">
 		
+	
 			<h2 class="titolo">Dettagli Utente</h2>
+			<a id="nomeLink" th:href="@{/utente/{id}/edit(id=${utenteSelezionato.id})}">modifica </a>
 			<br>
 			<p id="p_inline">Nome:</p>
 			<p id="p_inline" th:text="${utenteSelezionato.nome}"></p>			
 			<hr>
 			<p id="p_inline">Cognome:</p>
 			<p id="p_inline" th:text="${utenteSelezionato.cognome}"></p>
-			<hr id="trasparenza_linea">
+			<hr >
 			<p id="p_inline">Anno di Nascita:</p>
 			<p id="p_inline" th:text="${utenteSelezionato.annoNascita}"></p>
 			<hr>

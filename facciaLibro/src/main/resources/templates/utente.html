@@ -24,8 +24,26 @@
 
 		</div>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
 	<div class="contorno">
 	<h2 class="titolo">Utenti</h2>
+	
+	<div id="filtro">
+		<form action="/utente/" method="GET">
+			
+				<label>cerca per nome:</label> 
+					<input id="testo_filtro" type="text" name="nome">
+			<button id="cerca" type="submit"><i class="fas fa-search"></i></button>
+			
+		</form>
+	</div>
 		<table class="tabella">
 			<thead class="thead thead-dark">
 				<tr>
@@ -43,7 +61,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="utente :${listaUtenti}">
-				<td class="nomeContenuto"><a th:text="${utente.nome}"
+				<td class="nomeContenuto"><a id="nomeLink" th:text="${utente.nome}"
 								th:href="${utente.id}"> </a></td>
 				
 <!-- 					<td class="nomeContenuto" th:text="${utente.nome}"></td> -->
