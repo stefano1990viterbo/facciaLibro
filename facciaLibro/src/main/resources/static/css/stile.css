@@ -88,6 +88,10 @@ body {
 	margin-top: 2px;
 }
 
+#formParametro{
+	width: 20%;
+}
+
 .colonna {
 	padding: 4%;
 	border-style: solid;

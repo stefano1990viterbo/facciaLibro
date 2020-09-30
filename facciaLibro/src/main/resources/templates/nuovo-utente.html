@@ -24,43 +24,120 @@
 
 		</div>
 
-		<div class="contorno">
-		
-		<h2 class="titolo">Registrazione</h2>
+		<div class="dettagliUtente">
+
+			<h2 class="titolo">Registrazione</h2>
 
 			<form action="/utente/" method="POST">
-				<p>Nome:</p>
-				<input type="text" name="nome"> <br>
-				<p>Cognome:</p>
-				<input type="text" name="cognome"> <br> <br>
-				<p>anno di nascita:</p>
-				<input type="text" name="annoNascita"> <br>
 
-				<p>via:</p>
-				<input type="text" name="indirizzo.via">
-				<p>civico:</p>
-				<input type="text" name="indirizzo.civico">
-				<p>comune:</p>
-				<input type="text" name="indirizzo.comune">
-				<p>provincia:</p>
-				<input type="text" name="indirizzo.provincia">
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">Nome:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="nome">
+					</div>
+				</div>
+				<br>
 
-				<p>primo telefono:</p>
-				<input type="text" name="telefono[0].numero">
-				<p>secondo telefono:</p>
-				<input type="text" name="telefono[1].numero">
-				<!-- 		<p>secondo telefono:</p> -->
-				<!-- 		<input type="text" name="telefono[1].numero"> -->
 
-				<input type="submit">
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">Cognome:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="cognome">
+
+					</div>
+				</div>
+
+				<br>
+
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">anno di nascita:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="annoNascita">
+					</div>
+				</div>
+				<br>
+
+
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">via:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="indirizzo.via">
+					</div>
+				</div>
+				<br>
+
+
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">civico:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="indirizzo.civico">
+					</div>
+				</div>
+
+
+
+				<br>
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">comune:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="indirizzo.comune">
+					</div>
+				</div>
+
+				<br>
+
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">provincia:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="indirizzo.provincia">
+					</div>
+				</div>
+				<br>
+
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">primo telefono:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="telefono[0].numero">
+
+					</div>
+				</div>
+
+				<br>
+				<div id="contenuto_incolonnato">
+					<div id="formParametro">
+						<p id="p_inline">secondo telefono:</p>
+					</div>
+					<div>
+						<input id="inputCentro" type="text" name="telefono[1].numero">
+					</div>
+				</div>
+				<br> <input type="submit">
 			</form>
 		</div>
 	</div>
 
-<div id="pieDiPagina">
+	<div id="pieDiPagina">
 
-				<p>FacciaLibro<br>Stefano Ricci<br>versione 1.0.0</p>
-	</div>	
+		<p>
+			FacciaLibro<br>Stefano Ricci<br>versione 1.0.0
+		</p>
+	</div>
 </body>
 
 </html>
