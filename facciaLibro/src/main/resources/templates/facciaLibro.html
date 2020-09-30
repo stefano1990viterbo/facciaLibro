@@ -53,12 +53,11 @@
 					<tbody>
 						<tr th:each="p :${listaPost}">
 
-							<td class="nomeContenuto"><a th:text="${p.nomeUtente}"
-								th:href="${p.idUtente}"> </a></td>
+							<td class="nomeContenuto"><a th:text="${p.utenteCreazione.nome}"
+								th:href="${p.utenteCreazione.id}"> </a></td>
 							<td class="titoloPostContenuto" th:text="${p.titolo}"></td>
 							<td class="postContenuto" th:text="${p.testo}"></td>
 							<td class="postContenuto" th:text="${p.dataFormattata}"></td>
-
 
 
 						</tr>

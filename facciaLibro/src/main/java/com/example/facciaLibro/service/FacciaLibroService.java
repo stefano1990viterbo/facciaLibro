@@ -1,5 +1,6 @@
 package com.example.facciaLibro.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,8 @@ import org.springframework.ui.Model;
 import com.example.facciaLibro.entity.Post;
 import com.example.facciaLibro.entity.Utente;
 
+import javassist.expr.NewArray;
+
 @Service
 public class FacciaLibroService {
 	@Autowired
@@ -17,11 +20,5 @@ public class FacciaLibroService {
 PostService postService;
 	
 
-public List<Utente> primaPagina() {
-List<Utente> listaUtenti = utentiService.leggiUtenti();
-	List<Post> listaPost=postService.leggiPost();
-	System.out.println("Utenti: " + listaUtenti);
-	System.out.println("Post:" +listaPost);
-	return listaUtenti;
-}
+
 }

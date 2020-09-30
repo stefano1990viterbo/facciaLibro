@@ -66,7 +66,7 @@
 			</thead>
 
 			<tbody>
-				<tr th:each="p :${listaPost}">
+				<tr th:each="p :${utenteSelezionato.post}">
 
 					<td class="postContenuto" th:text="${p.dataFormattata}"></td>
 					<td class="titoloPostContenuto" th:text="${p.titolo}"></td>

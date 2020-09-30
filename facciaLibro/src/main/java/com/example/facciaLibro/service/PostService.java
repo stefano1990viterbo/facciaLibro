@@ -44,11 +44,41 @@ public class PostService {
 //		
 //	}
 
+//	public void creaPost(Post post, Utente utenteConfrontare) {
+//
+//		List<Utente> listaUtente = (List<Utente>) utentiRepository.findAll();
+//		List<Post> listaPost = new ArrayList<>();
+//
+//		for (Utente utenteAggiornare : listaUtente) {
+//
+//			if (utenteConfrontare.getNome().equalsIgnoreCase(utenteAggiornare.getNome())
+//					&& utenteConfrontare.getCognome().equalsIgnoreCase(utenteAggiornare.getCognome())) {
+//
+//				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+//				post.setDataFormattata(post.getDataCreazione().format(formatter));
+//
+//				post.setIdUtente(utenteAggiornare.getId());
+//				//post.setNomeUtente(utenteAggiornare.getNome());
+//
+//				listaPost.add(post);
+//				utenteAggiornare.setPost(listaPost);
+//				postRepository.save(post);
+//
+//			}
+//
+//		}
+//
+//	}
+	
+	
 	public void creaPost(Post post, Utente utenteConfrontare) {
 
 		List<Utente> listaUtente = (List<Utente>) utentiRepository.findAll();
 		List<Post> listaPost = new ArrayList<>();
-
+		
+		List<Post> listapostU = (List<Post>) postRepository.findAll();
+		
+		
 		for (Utente utenteAggiornare : listaUtente) {
 
 			if (utenteConfrontare.getNome().equalsIgnoreCase(utenteAggiornare.getNome())
@@ -57,23 +87,29 @@ public class PostService {
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 				post.setDataFormattata(post.getDataCreazione().format(formatter));
 
-				post.setIdUtente(utenteAggiornare.getId());
-				post.setNomeUtente(utenteAggiornare.getNome());
-
+//				post.setIdUtente(utenteAggiornare.getId());
+//				post.setNomeUtente(utenteAggiornare.getNome());
+				
+				
+				post.setUtenteCreazione(utenteAggiornare);
+				listapostU.add(post);
+				
 				listaPost.add(post);
 				utenteAggiornare.setPost(listaPost);
 				postRepository.save(post);
+				utentiRepository.save(utenteAggiornare);
+				
+				
 
 			}
-
+			
 		}
 
 	}
 
-	public List<Post> postByIdUtente(Long idUtente) {
+	public List<Post> postByIdUtente(Utente utenteCreazione) {
 		List<Post> postUtenteSelezionato = new ArrayList<>();
-		postUtenteSelezionato = postRepository.findByIdUtente(idUtente);
-		
+		postUtenteSelezionato = postRepository.findByUtenteCreazione(utenteCreazione);		
 		postUtenteSelezionato.sort((o2, o1) -> o1.getDataCreazione().compareTo(o2.getDataCreazione()));
 
 		return postUtenteSelezionato;

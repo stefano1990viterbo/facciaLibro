@@ -19,45 +19,36 @@ import com.example.facciaLibro.service.UtentiService;
 @Controller
 @RequestMapping("/facciaLibro")
 public class FacciaLibroController {
-	
+
 	@Autowired
 	UtentiService utentiService;
-@Autowired
-PostService postService;
-@Autowired
-FacciaLibroService facciaLibroService;
-	
+	@Autowired
+	PostService postService;
+	@Autowired
+	FacciaLibroService facciaLibroService;
 
-	
-@GetMapping("/")
-public List<Utente> primaPagina(Model model) {
+	@GetMapping("/")
+	public List<Post> primaPagina(Model model) {
 
-	List<Utente> primaPagina=facciaLibroService.primaPagina();
+		// List<Post> primaPagina=facciaLibroService.primaPagina();
+		// model.addAttribute("listaPost", primaPagina);
 
-	List<Utente> listaUtenti = utentiService.leggiUtenti();
-	List<Post> listaPost = postService.leggiPost();
-	model.addAttribute("listaUtenti", listaUtenti);
-	model.addAttribute("listaPost", listaPost);
+//	List<Utente> listaUtenti = utentiService.leggiUtenti();
+//	model.addAttribute("listaUtenti", listaUtenti);
 
-	return primaPagina;
-	
-	
-}
+		List<Post> listaPost = postService.leggiPost();
+		model.addAttribute("listaPost", listaPost);
 
-@GetMapping("/{idUtente}")
-public String show(@PathVariable Long idUtente, Model model) {
-	List<Post> postUtente = new ArrayList<Post>();
-	Utente utenteSelezionato = utentiService.utenteFindById(idUtente);
-	postUtente = postService.postByIdUtente(idUtente);
-	
-	
-	for(Post lista: postUtente) {
-		System.out.println("DEBUG LISTA "+lista);
+		return listaPost;
+
 	}
-	
-	model.addAttribute("listaPost", postUtente);
-	model.addAttribute("utenteSelezionato", utenteSelezionato);
-	return "dettagli-utente";
-}
+
+	@GetMapping("/{utenteCreazione}")
+	public String show(@PathVariable long utenteCreazione, Model model) {
+
+		Utente utenteSelezionato = utentiService.utenteFindById(utenteCreazione);
+		model.addAttribute("utenteSelezionato", utenteSelezionato);
+		return "dettagli-utente";
+	}
 
 }

@@ -44,11 +44,11 @@ public class UtentiController {
 		return "redirect:/utente/";
 	}
 
-	@GetMapping("/{idUtente}")
+	@GetMapping("/{id}")
 	public String show(@PathVariable Long id, Model model) {
 
 		Utente utenteSelezionato = utentiService.utenteFindById(id);
-		model.addAttribute("utenteTrovato", utenteSelezionato);
+		model.addAttribute("utenteSelezionato", utenteSelezionato);
 		
 		return "dettagli-utente";
 	}

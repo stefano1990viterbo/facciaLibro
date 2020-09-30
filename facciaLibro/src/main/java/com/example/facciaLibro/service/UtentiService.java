@@ -1,5 +1,6 @@
 package com.example.facciaLibro.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.example.facciaLibro.entity.Indirizzo;
+import com.example.facciaLibro.entity.Post;
 import com.example.facciaLibro.entity.Telefono;
 import com.example.facciaLibro.entity.Utente;
 import com.example.facciaLibro.repository.UtentiRepository;
@@ -22,6 +24,8 @@ public class UtentiService {
 
 	@Autowired
 	TelefonoService telefonoService;
+	@Autowired
+	PostService postService;
 
 //	@Autowired
 //	Model model;
@@ -29,6 +33,9 @@ public class UtentiService {
 	public Utente utenteFindById(Long id) {
 
 		Utente utenteSelezionato = utentiRepository.findById(id).get();
+		List<Post> postUtente = postService.postByIdUtente(utenteSelezionato);
+		
+		utenteSelezionato.setPost(postUtente);
 
 		return utenteSelezionato;
 	}
@@ -41,8 +48,7 @@ public class UtentiService {
 			utentiRepository.save(utente);
 			return null;
 		} else {
-//			String errore="c'è gia un utente con queste credenziali";
-//			model.addAttribute("errore", errore);	
+
 			System.out.println("c'è gia un utente con queste credenziali");
 			return "redirect:/errore/";
 

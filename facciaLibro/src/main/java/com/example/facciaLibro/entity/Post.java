@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Post {
@@ -18,9 +19,21 @@ public class Post {
 	private String testo;
 	private LocalDateTime dataCreazione=LocalDateTime.now();
 	
-	
+//	private Long idUtente;
+//	private String nomeUtente;
 	
 	private String dataFormattata;
+	
+	@ManyToOne
+	private Utente utenteCreazione;
+	
+	public Utente getUtenteCreazione() {
+		return utenteCreazione;
+	}
+	public void setUtenteCreazione(Utente utenteCreazione) {
+		this.utenteCreazione = utenteCreazione;
+	}
+	
 	
 	public String getDataFormattata() {
 		return dataFormattata;
@@ -28,21 +41,20 @@ public class Post {
 	public void setDataFormattata(String dataFormattata) {
 		this.dataFormattata = dataFormattata;
 	}
-	private Long idUtente;
-	private String nomeUtente;
+	
 
-		public String getNomeUtente() {
-		return nomeUtente;
-	}
-	public void setNomeUtente(String nomeUtente) {
-		this.nomeUtente = nomeUtente;
-	}
-	public Long getIdUtente() {
-		return idUtente;
-	}
-	public void setIdUtente(Long idUtente) {
-		this.idUtente = idUtente;
-	}
+//		public String getNomeUtente() {
+//		return nomeUtente;
+//	}
+//	public void setNomeUtente(String nomeUtente) {
+//		this.nomeUtente = nomeUtente;
+//	}
+//	public Long getIdUtente() {
+//		return idUtente;
+//	}
+//	public void setIdUtente(Long idUtente) {
+//		this.idUtente = idUtente;
+//	}
 	public Long getId() {
 		return id;
 	}
@@ -70,7 +82,7 @@ public class Post {
 	@Override
 	public String toString() {
 		return "Post [id=" + id + ", titolo=" + titolo + ", testo=" + testo + ", dataCreazione=" + dataCreazione
-				+ ", idUtente=" + idUtente + "]";
+				+ ", idUtente=" + "]";
 	}
 	
 	
