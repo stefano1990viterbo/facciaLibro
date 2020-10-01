@@ -91,6 +91,13 @@ body {
 /* 	margin: -1%; */
 	margin-top: 2px;
 }
+#contenuto_incolonnato2 {
+	display: flex;
+	flex: 50%;
+	flex-direction: row;
+	margin: -1%;
+	margin-top: 2px;
+}
 
 #formParametro{
 	width: 20%;
